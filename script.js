@@ -8,7 +8,9 @@ function alerta() {
   if (email.value === usuario && senha.value === senhaDeAcesso) {
     alert('Olá, Tryber!');
   }
-  alert('Email ou senha inválidos.');
+  else {
+    alert('Email ou senha inválidos.');
+  }
 }
 
 botao.addEventListener('click', alerta);
