@@ -1,3 +1,4 @@
+// Requisito 3
 const botao = document.getElementById('button');
 
 const email = document.getElementById('login');
@@ -15,3 +16,13 @@ function alerta() {
 }
 
 botao.addEventListener('click', alerta);
+
+// Requisito 8
+const submitB = document.getElementById('submit-btn');
+
+const agreedCheck = document.getElementById('agreement');
+
+function habilitarBotao() {
+  if(agreedCheck)
+}
+
