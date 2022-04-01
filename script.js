@@ -31,5 +31,5 @@ function habilitarBotao() {
     submitB.disabled = true;
   }
 } 
-
 agreedCheck.addEventListener('click', habilitarBotao)
+
