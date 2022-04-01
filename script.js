@@ -18,11 +18,18 @@ function alerta() {
 botao.addEventListener('click', alerta);
 
 // Requisito 8
-// const submitB = document.getElementById('submit-btn');
+const submitB = document.getElementById('submit-btn');
 
-// const agreedCheck = document.getElementById('agreement');
+const agreedCheck = document.getElementById('agreement');
 
-// function habilitarBotao() {
-//   if(agreedCheck)
-// }
+submitB.disabled = true;
 
+function habilitarBotao() {
+  if(agreedCheck.checked === true){
+    submitB.disabled = false;
+  } else {
+    submitB.disabled = true;
+  }
+} 
+
+agreedCheck.addEventListener('click', habilitarBotao)
