@@ -23,6 +23,10 @@ botao.addEventListener('click', alerta);
 // const agreedCheck = document.getElementById('agreement');
 
 // function habilitarBotao() {
-//   if(agreedCheck)
+//   if(agreedCheck.checked) {
+//     submitB.disable = true;
+// } else {
+//   submitB.disable = true;
 // }
-
+// }
+// habilitarBotao();
