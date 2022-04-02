@@ -32,3 +32,14 @@ function habilitarBotao() {
   }
 }
 agreedCheck.addEventListener('click', habilitarBotao);
+
+// Requisito 20
+const counter = document.getElementById('counter');
+const textArea = document.getElementById('textarea');
+
+function contadorDeCaracteres() {
+  const tamanhoArea = textArea.value.length;
+  counter.innerHTML = 500 - tamanhoArea;
+}
+
+textArea.addEventListener('input', contadorDeCaracteres); // ref.: https://www.w3schools.com/jsref/event_oninput.asp
