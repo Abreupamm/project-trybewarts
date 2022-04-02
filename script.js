@@ -17,7 +17,7 @@ function alerta() {
 
 botao.addEventListener('click', alerta);
 
-// Requisito 8
+// Requisito 18
 const submitB = document.getElementById('submit-btn');
 
 const agreedCheck = document.getElementById('agreement');
@@ -43,3 +43,78 @@ function contadorDeCaracteres() {
 }
 
 textArea.addEventListener('input', contadorDeCaracteres); // ref.: https://www.w3schools.com/jsref/event_oninput.asp
+
+// questão 21
+const section = document.getElementById('relatorio');
+const nome = document.getElementById('input-name');
+const sobrenome = document.getElementById('input-lastname');
+
+function gerarNome() {
+  const p = document.createElement('p');
+  section.appendChild(p);
+  p.innerText = 'Nome: ' + nome.value + sobrenome.value;
+}
+
+const email2 = document.getElementById('input-email');
+
+function gerarEmail() {
+  const p = document.createElement('p');
+  section.appendChild(p);
+  p.innerText = 'Email: ' + email2.value; 
+}
+
+const casa = document.getElementById('house');
+
+function gerarCasa() {
+  const p = document.createElement('p');
+  section.appendChild(p);
+  p.innerText = 'Casa: ' + casa.value; 
+}
+
+function gerarFamilia() {
+  const p = document.createElement('p');
+  section.appendChild(p);
+  const front = document.getElementById('front');
+  const back = document.getElementById('back');
+  const full = document.getElementById('full');
+  let checked;
+  if (front.checked) {
+    checked = front.value; 
+  }
+  if (back.checked) {
+    checked = back.value;
+  }
+  if (full.checked) {
+    checked = full.value;
+  }
+    p.innerText = 'Família: ' + checked; 
+}
+
+function gerarMateria() {
+  const p = document.createElement('p');
+  section.appendChild(p);
+  const materia = document.getElementsByClassName('subject');
+  let conteudo = [];
+  for(let i = 0; i < materia.length; i += 1) {
+    if(materia[i].checked) {
+conteudo.push(materia[i].value);
+    }
+  }
+  p.innerText = 'Matérias: ' + conteudo;
+}
+
+function gerarNota() {
+  const nota = document.getElementsByClassName('nota');
+  const p = document.createElement('p');
+  section.appendChild(p);
+  for(let i = 0; i < nota.length; i += 1) {
+    const numero = nota[i];
+    if(numero.checked){
+      p.innerText = 'Avaliação: ' + numero.value;
+    }
+  }
+}
+
+submitB.addEventListener('click', gerarNota);
+
+
