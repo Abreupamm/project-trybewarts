@@ -45,9 +45,9 @@ function contadorDeCaracteres() {
 textArea.addEventListener('input', contadorDeCaracteres); // ref.: https://www.w3schools.com/jsref/event_oninput.asp
 
 // questão 21
-const section = document.getElementById('relatorio');
 const nome = document.getElementById('input-name');
 const sobrenome = document.getElementById('input-lastname');
+const section = document.getElementById('relatorio');
 
 function gerarNome() {
   const p = document.createElement('p');
@@ -97,7 +97,7 @@ function gerarMateria() {
   let conteudo = [];
   for(let i = 0; i < materia.length; i += 1) {
     if(materia[i].checked) {
-conteudo.push(materia[i].value);
+    conteudo.push(materia[i].value);
     }
   }
   p.innerText = 'Matérias: ' + conteudo;
@@ -115,6 +115,31 @@ function gerarNota() {
   }
 }
 
-submitB.addEventListener('click', gerarNota);
+function gerarObservacao() {
+  const p = document.createElement('p');
+  section.appendChild(p);
+  const textArea = document.getElementById('textarea');
+  p.innerText = 'Observações: ' + textArea.value;
+}
 
+function gerarRelatorio() {
+  const nomeCompleto = gerarNome();
+  const email = gerarEmail();
+  const casa = gerarCasa();
+  const familia = gerarFamilia();
+  const materia = gerarMateria();
+  const nota = gerarNota();
+  const observacao = gerarObservacao();
 
+  section.innerHTML = `
+  ${nomeCompleto}
+  ${email}
+  ${casa}
+  ${familia}
+  ${materia}
+  ${nota}
+  ${observacao}
+  `;
+}
+
+submitB.addEventListener('click', gerarRelatorio());
