@@ -48,27 +48,25 @@ textArea.addEventListener('input', contadorDeCaracteres); // ref.: https://www.w
 const nome = document.getElementById('input-name');
 const sobrenome = document.getElementById('input-lastname');
 const section = document.getElementById('relatorio');
+const email2 = document.getElementById('input-email');
+const casa = document.getElementById('house');
 
 function gerarNome() {
   const p = document.createElement('p');
   section.appendChild(p);
-  p.innerText = 'Nome: ' + nome.value + sobrenome.value;
+  p.innerText = `Nome: ${nome.value} ${sobrenome.value}`;
 }
-
-const email2 = document.getElementById('input-email');
 
 function gerarEmail() {
   const p = document.createElement('p');
   section.appendChild(p);
-  p.innerText = 'Email: ' + email2.value; 
+  p.innerText = `Email: ${email2.value}`;
 }
-
-const casa = document.getElementById('house');
 
 function gerarCasa() {
   const p = document.createElement('p');
   section.appendChild(p);
-  p.innerText = 'Casa: ' + casa.value; 
+  p.innerText = `Casa: ${casa.value}`;
 }
 
 function gerarFamilia() {
@@ -79,7 +77,7 @@ function gerarFamilia() {
   const full = document.getElementById('full');
   let checked;
   if (front.checked) {
-    checked = front.value; 
+    checked = front.value;
   }
   if (back.checked) {
     checked = back.value;
@@ -87,30 +85,31 @@ function gerarFamilia() {
   if (full.checked) {
     checked = full.value;
   }
-    p.innerText = 'Família: ' + checked; 
+  p.innerText = `Família: ${checked}`;
 }
 
 function gerarMateria() {
   const p = document.createElement('p');
   section.appendChild(p);
   const materia = document.getElementsByClassName('subject');
-  let conteudo = [];
-  for(let i = 0; i < materia.length; i += 1) {
-    if(materia[i].checked) {
-    conteudo.push(materia[i].value);
+  const conteudo = [];
+  for (let i = 0; i < materia.length; i += 1) {
+    if (materia[i].checked) {
+      const salvarMareria = ` ${materia[i].value}`;
+      conteudo.push(salvarMareria);
     }
   }
-  p.innerText = 'Matérias: ' + conteudo;
+  p.innerText = `Matérias: ${conteudo}`;
 }
 
 function gerarNota() {
   const nota = document.getElementsByClassName('nota');
   const p = document.createElement('p');
   section.appendChild(p);
-  for(let i = 0; i < nota.length; i += 1) {
+  for (let i = 0; i < nota.length; i += 1) {
     const numero = nota[i];
-    if(numero.checked){
-      p.innerText = 'Avaliação: ' + numero.value;
+    if (numero.checked) {
+      p.innerText = `Avaliação: ${numero.value}`;
     }
   }
 }
@@ -118,28 +117,28 @@ function gerarNota() {
 function gerarObservacao() {
   const p = document.createElement('p');
   section.appendChild(p);
-  const textArea = document.getElementById('textarea');
-  p.innerText = 'Observações: ' + textArea.value;
+  p.innerText = `Observações: ${textArea.value}`;
 }
 
+function salvarForm() {
+  localStorage.setItem('salvar-form', JSON.stringify(section.innerHTML));
+}
 function gerarRelatorio() {
-  const nomeCompleto = gerarNome();
-  const email = gerarEmail();
-  const casa = gerarCasa();
-  const familia = gerarFamilia();
-  const materia = gerarMateria();
-  const nota = gerarNota();
-  const observacao = gerarObservacao();
-
-  section.innerHTML = `
-  ${nomeCompleto}
-  ${email}
-  ${casa}
-  ${familia}
-  ${materia}
-  ${nota}
-  ${observacao}
-  `;
+  gerarNome();
+  gerarEmail();
+  gerarCasa();
+  gerarFamilia();
+  gerarMateria();
+  gerarNota();
+  gerarObservacao();
+  salvarForm();
 }
 
-submitB.addEventListener('click', gerarRelatorio());
+submitB.addEventListener('click', gerarRelatorio);
+
+window.onload = function form() {
+  const lista = JSON.parse(localStorage.getItem('salvar-form', section.innerHTML));
+  if (lista) {
+    section.innerHTML = lista;
+  }
+};

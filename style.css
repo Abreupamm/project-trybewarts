@@ -19,6 +19,7 @@
   display: flex;
   width: 675px;
   flex-direction: column;
+  margin: 30px;
 }
 
 .main {
@@ -27,6 +28,7 @@
 
 #trybewarts-forms-logo {
   height: 500px;
+  margin: 30px;
 }
 
 .familia {
@@ -41,5 +43,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0%;
+}
+
+form h1 , #name-lastname {
+  margin-bottom: 10px;
 }
