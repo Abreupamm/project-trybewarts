@@ -12,7 +12,7 @@ Neste projeto, foi desenvolvido uma página de formulário da Escola de Magia de
 
 # Como foi desenvolvido
 
-Este projeto foi desenvolvido em **equipe**, junto com <a href='https://github.com/juliamarqss'>Julia Marques</a>
+Este projeto foi desenvolvido junto com <a href='https://github.com/juliamarqss'>Julia Marques</a>, utilizamos a ferramenta Zoom para fazer vídeos chamadas e desenvolvemos a aplicação de forma síncrona.
 
 
 <img src='https://github.com/Abreupamm/project-trybewarts/blob/main/images/Captura%20de%20tela%20de%202022-09-02%2016-29-15.png?raw=true' />
