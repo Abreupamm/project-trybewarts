@@ -23,7 +23,10 @@ Este projeto foi desenvolvido junto com <a href='https://github.com/juliamarqss'
 * JAVASCRIPT
 
 
-#
+# Como acessar a aplivação:
+
+Link da aplicação <a href='https://abreupamm.github.io/project-trybewarts/'>Trybe Warts</a>
+
 ## O que foi desenvlvido:
 
 ### 1. Barra na parte superior da página
