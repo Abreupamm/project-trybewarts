@@ -15,9 +15,7 @@ Neste projeto, foi desenvolvido uma página de formulário da Escola de Magia de
 Este projeto foi desenvolvido em **equipe**.
 
 
-(./home/pamela/trybe-projetos/fundamentos/trybewarts/sd-021-a-project-trybewarts/images/Captura de tela de 2022-09-02 16-29-15.png)
-
----
+<img src='https://github.com/Abreupamm/project-trybewarts/blob/main/images/Captura%20de%20tela%20de%202022-09-02%2016-29-15.png?raw=true' />
 
 # Tecnologias utilizadas
 * HTML
